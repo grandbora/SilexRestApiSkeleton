@@ -1,6 +1,7 @@
 {
     "require": {
-        "silex/silex": "1.0.*"
+        "silex/silex": "1.0.*",
+        "codealchemy/wisdom": "1.0.*"
     },
     "autoload": {
         "psr-0": {

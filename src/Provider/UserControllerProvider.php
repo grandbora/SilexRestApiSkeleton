@@ -14,6 +14,9 @@ class UserControllerProvider implements ControllerProviderInterface {
 
         $controllers->get('/{id}', function (Application $app, $id) {
 
+                    $config = $app['wisdom']->get('config.json');
+                    var_dump($config);
+
                     // serve user data        
                     $user = new \stdClass();
                     $user->id = $id;

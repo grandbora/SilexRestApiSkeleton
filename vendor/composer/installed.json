@@ -3,7 +3,7 @@
         "name": "pimple/pimple",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-07-01 06:38:20",
+        "time": "2012-07-01 03:38:20",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Pimple.git",
@@ -53,7 +53,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/EventDispatcher",
-        "time": "2012-05-26 03:48:33",
+        "time": "2012-05-26 00:48:33",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/EventDispatcher",
@@ -108,20 +108,126 @@
         }
     },
     {
+        "name": "symfony/config",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Symfony/Component/Config",
+        "time": "2012-07-03 15:34:31",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Config",
+            "reference": "a261cb1571e1f3921a632541299a9f39753a62a7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/Config/zipball/a261cb1571e1f3921a632541299a9f39753a62a7",
+            "reference": "a261cb1571e1f3921a632541299a9f39753a62a7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Symfony Community",
+                "email": null,
+                "homepage": "http://symfony.com/contributors",
+                "role": null
+            }
+        ],
+        "description": "Symfony Config Component",
+        "homepage": "http://symfony.com",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Config": ""
+            }
+        }
+    },
+    {
+        "name": "codealchemy/wisdom",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "time": "2012-06-30 16:45:31",
+        "source": {
+            "type": "git",
+            "url": "http://github.com/codealchemy/Wisdom.git",
+            "reference": "f8209b8c232e5a8c1f5198f75f376ea3359c6fdc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/codealchemy/Wisdom/zipball/f8209b8c232e5a8c1f5198f75f376ea3359c6fdc",
+            "reference": "f8209b8c232e5a8c1f5198f75f376ea3359c6fdc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/config": "2.1.*"
+        },
+        "require-dev": {
+            "silex/silex": "1.0.*",
+            "symfony/yaml": "2.1.*"
+        },
+        "suggest": {
+            "symfony/yaml": "2.1.*",
+            "ext-json": "*"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "source",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kevin Herrera",
+                "email": "kherrera@codealchemy.com",
+                "homepage": "http://kevingh.com/",
+                "role": null
+            }
+        ],
+        "description": "A Symfony Config-based configuration loader.",
+        "homepage": "http://github.com/codealchemy/Wisdom",
+        "autoload": {
+            "psr-0": {
+                "CODEAlchemy\\Wisdom": "src/lib/"
+            }
+        }
+    },
+    {
         "name": "symfony/routing",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Routing",
-        "time": "2012-07-01 19:09:16",
+        "time": "2012-07-03 10:52:06",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Routing",
-            "reference": "6efe2369ad32ccdb648018f2eac83997d2d9b33b"
+            "reference": "622a168a3be54a87e34ad65e9d50a738fb89ff7e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/Routing/zipball/6efe2369ad32ccdb648018f2eac83997d2d9b33b",
-            "reference": "6efe2369ad32ccdb648018f2eac83997d2d9b33b",
+            "url": "https://github.com/symfony/Routing/zipball/622a168a3be54a87e34ad65e9d50a738fb89ff7e",
+            "reference": "622a168a3be54a87e34ad65e9d50a738fb89ff7e",
             "shasum": ""
         },
         "require": {
@@ -175,16 +281,16 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpKernel",
-        "time": "2012-07-02 08:37:57",
+        "time": "2012-07-03 16:15:20",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpKernel",
-            "reference": "9d3743d5fbca0a66b0a6a0f106c3b8c90d2aeee6"
+            "reference": "6d6f55f6b07b8bfed741a192def8d1bfbf6c590f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/HttpKernel/zipball/9d3743d5fbca0a66b0a6a0f106c3b8c90d2aeee6",
-            "reference": "9d3743d5fbca0a66b0a6a0f106c3b8c90d2aeee6",
+            "url": "https://github.com/symfony/HttpKernel/zipball/6d6f55f6b07b8bfed741a192def8d1bfbf6c590f",
+            "reference": "6d6f55f6b07b8bfed741a192def8d1bfbf6c590f",
             "shasum": ""
         },
         "require": {
@@ -246,16 +352,16 @@
         "name": "silex/silex",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-07-01 19:15:34",
+        "time": "2012-07-03 19:18:06",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Silex.git",
-            "reference": "9acfa332f95a2fa72e33f4c6fc8499b721db2705"
+            "reference": "13eb2ba916e39d5b8b1d054aaa441cf8e1004d85"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/fabpot/Silex/zipball/9acfa332f95a2fa72e33f4c6fc8499b721db2705",
-            "reference": "9acfa332f95a2fa72e33f4c6fc8499b721db2705",
+            "url": "https://github.com/fabpot/Silex/zipball/13eb2ba916e39d5b8b1d054aaa441cf8e1004d85",
+            "reference": "13eb2ba916e39d5b8b1d054aaa441cf8e1004d85",
             "shasum": ""
         },
         "require": {
@@ -329,16 +435,16 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpFoundation",
-        "time": "2012-07-02 20:11:17",
+        "time": "2012-07-04 05:27:44",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation",
-            "reference": "f28a2ffa86ca77a83e56778ab290b0cd3005f36f"
+            "reference": "3e53f0a9f802dc1f34a722109df0b0d2679671a8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/HttpFoundation/zipball/f28a2ffa86ca77a83e56778ab290b0cd3005f36f",
-            "reference": "f28a2ffa86ca77a83e56778ab290b0cd3005f36f",
+            "url": "https://github.com/symfony/HttpFoundation/zipball/3e53f0a9f802dc1f34a722109df0b0d2679671a8",
+            "reference": "3e53f0a9f802dc1f34a722109df0b0d2679671a8",
             "shasum": ""
         },
         "require": {
