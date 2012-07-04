@@ -5,7 +5,8 @@ Nothing fancy :)
 
 TODO  
 <del>add configuration -> bind app debug</del>  
-    change this to a better lib (which allows overriding)  
+* change this to a better lib (which allows overriding)  
+
 <del>add monolog</del>  
 add models  
 add persistence layer  
