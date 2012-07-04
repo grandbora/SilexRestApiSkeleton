@@ -4,7 +4,6 @@ namespace Provider;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
-use Symfony\Component\HttpFoundation\Response;
 
 class UserControllerProvider implements ControllerProviderInterface {
 
@@ -13,9 +12,6 @@ class UserControllerProvider implements ControllerProviderInterface {
         $controllers = $app['controllers'];
 
         $controllers->get('/{id}', function (Application $app, $id) {
-
-                    $config = $app['wisdom']->get('config.json');
-                    var_dump($config);
 
                     // serve user data        
                     $user = new \stdClass();

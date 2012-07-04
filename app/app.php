@@ -15,10 +15,11 @@ if ("prod" !== getenv("APPLICATION_ENV")) {
 $app->register(new Provider, array(
     'wisdom.path' => $baseDir . '/config',
     'wisdom.options' => array(
-        'prefix' => getenv("APPLICATION_ENV").'.'
+        'prefix' => getenv("APPLICATION_ENV") . '.'
     )
 ));
 
+$app->mount('', new \Provider\UtilControllerProvider());
 $app->mount('/users', new \Provider\UserControllerProvider());
 
 return $app;
