@@ -8,7 +8,7 @@ TODO
 * change this to a better lib (which allows overriding)  
 
 <del>add monolog</del>  
-add models  
+<del>add models</del>  
 add persistence layer  
 
 ---

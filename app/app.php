@@ -2,7 +2,8 @@
 
 use CODEAlchemy\Wisdom\Silex\Provider;
 use Silex\Provider\MonologServiceProvider;
-use Monolog\Logger;
+use Provider\Controller\UtilControllerProvider;
+use Provider\Controller\UserControllerProvider;
 
 $baseDir = dirname(__DIR__);
 require_once $baseDir . '/app/bootstrap.php';
@@ -31,7 +32,7 @@ $app->register(new MonologServiceProvider(), array(
     'monolog.name' => 'silex-rest-api'
 ));
 
-$app->mount('', new \Provider\UtilControllerProvider());
-$app->mount('/users', new \Provider\UserControllerProvider());
+$app->mount('', new UtilControllerProvider());
+$app->mount('/users', new UserControllerProvider());
 
 return $app;

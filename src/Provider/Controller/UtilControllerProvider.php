@@ -1,6 +1,6 @@
 <?php
 
-namespace Provider;
+namespace Provider\Controller;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
