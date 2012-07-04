@@ -13,6 +13,8 @@ class UtilControllerProvider implements ControllerProviderInterface {
 
         $controllers->get('/conf', function (Application $app) {
 
+                    $app['monolog']->addInfo('Config route is requested.');
+
                     $config = $app['wisdom']->get('config.json');
                     return $app->json($config);
                 });

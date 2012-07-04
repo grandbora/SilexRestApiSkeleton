@@ -5,8 +5,10 @@ Nothing fancy :)
 
 TODO  
 <del>add configuration -> bind app debug</del>  
-add monolog  
-add persistence layer
+    change this to a better lib (which allows overriding)  
+<del>add monolog</del>  
+add models  
+add persistence layer  
 
 ---
 add tests Unit/integration  

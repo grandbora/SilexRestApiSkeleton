@@ -1,5 +1,6 @@
 {
-    "id":"PROD",
-    "name":"test",
-    "name2":"test2"
+    "log":{
+        "path" : "/var/log/silex-rest-api.log",
+        "level": "WARNING"
+    }
 }

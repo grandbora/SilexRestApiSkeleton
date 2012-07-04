@@ -15,5 +15,6 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs',
     'Provider' => $baseDir . '/src',
     'Pimple' => $vendorDir . '/pimple/pimple/lib/',
+    'Monolog' => $vendorDir . '/monolog/monolog/src/',
     'CODEAlchemy\\Wisdom' => $vendorDir . '/codealchemy/wisdom/src/lib/',
 );
