@@ -4,7 +4,7 @@ Nothing fancy :)
 --
 
 TODO  
-add configuration -> bind app debug  
+<del>add configuration -> bind app debug  
 add monolog  
 add persistence layer
 
