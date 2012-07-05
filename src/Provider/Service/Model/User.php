@@ -2,23 +2,42 @@
 
 namespace Provider\Service\Model;
 
+use Provider\Service\Dao\User as Dao;
+
 class User {
 
     public $id;
     public $fbId;
     public $type;
     public $position;
+    private $dao;
 
-    public function __construct($id = null) {
+    public function __construct($app = null, $id = null) {
+
+        if (null !== $app)
+            $this->dao = new Dao($app['db']);
         if (null !== $id)
             $this->load((int) $id);
     }
 
     private function load($id) {
-        $this->id = (int) $id;
-        $this->fbId = 'dummmy';
-        $this->type = 'dummmy';
-        $this->position = 'dummmy';
+
+        $userData = $this->dao->load($id);
+        if (false === $userData)
+            throw new \Exception;
+
+        $this->id = $userData['id'];
+        $this->fbId = $userData['fbId'];
+        $this->type = $userData['type'];
+        $this->position = $userData['position'];
+    }
+
+    private function delete($id) {
+
+        if (0 === $this->dao->delete($id))
+            throw new \Exception;
+        
+        return true;
     }
 
     public function setId($id) {

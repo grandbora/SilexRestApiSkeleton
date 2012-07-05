@@ -16,5 +16,7 @@ return array(
     'Provider' => $baseDir . '/src',
     'Pimple' => $vendorDir . '/pimple/pimple/lib/',
     'Monolog' => $vendorDir . '/monolog/monolog/src/',
+    'Doctrine\\DBAL' => $vendorDir . '/doctrine/dbal/lib/',
+    'Doctrine\\Common' => $vendorDir . '/doctrine/common/lib/',
     'CODEAlchemy\\Wisdom' => $vendorDir . '/codealchemy/wisdom/src/lib/',
 );

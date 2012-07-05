@@ -2,7 +2,8 @@
     "require": {
         "silex/silex": "1.0.*",
         "codealchemy/wisdom": "1.0.*",
-        "monolog/monolog": ">=1.0.0"
+        "monolog/monolog": ">=1.0.0",
+        "doctrine/dbal": "2.2.*"
     },
     "autoload": {
         "psr-0": {

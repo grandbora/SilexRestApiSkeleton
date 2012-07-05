@@ -2,5 +2,12 @@
     "log":{
         "path" : "/var/log/silex-rest-api.log",
         "level": "DEBUG"
+    },
+    "db":{            
+        "driver"   : "pdo_mysql",
+        "dbname"   : "silexrestapi",
+        "host"     : "localhost",
+        "user"     : "root",
+        "password" : "root"
     }
 }
