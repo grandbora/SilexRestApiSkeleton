@@ -3,6 +3,7 @@
 namespace Provider\Service\Model;
 
 use Provider\Service\Dao\User as Dao;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 class User {
 
@@ -15,16 +16,16 @@ class User {
     public function __construct($app = null, $id = null) {
 
         if (null !== $app)
-            $this->dao = new Dao($app['db']);
+            $this->setDao(new Dao($app['db']));
         if (null !== $id)
             $this->load((int) $id);
     }
 
-    private function load($id) {
+    protected function load($id) {
 
-        $userData = $this->dao->load($id);
+        $userData = $this->getDao()->load($id);
         if (false === $userData)
-            throw new \Exception;
+            throw new ResourceNotFoundException;
 
         $this->id = $userData['id'];
         $this->fbId = $userData['fbId'];
@@ -35,7 +36,7 @@ class User {
     public function save() {
 
         $data = array('fbId' => $this->fbId, 'type' => $this->type, 'position' => $this->position);
-        if (0 === $id = $this->dao->save($data))
+        if (0 === $id = $this->getDao()->save($data))
             throw new \Exception;
 
         return $this->id = $id;
@@ -43,7 +44,7 @@ class User {
 
     public function delete($id) {
 
-        if (0 === $this->dao->delete($id))
+        if (0 === $this->getDao()->delete($id))
             throw new \Exception;
 
         return true;
@@ -51,7 +52,15 @@ class User {
 
     public function update(array $data) {
         $this->fbId = $data['fbId'];
-        $this->dao->update($this->id, $this->fbId);
+        $this->getDao()->update($this->id, $this->fbId);
+    }
+
+    protected function setDao($dao) {
+        $this->dao = $dao;
+    }
+
+    protected function getDao() {
+        return $this->dao;
     }
 
     public function setId($id) {

@@ -1,0 +1,13 @@
+{
+    "log":{
+        "path" : "/var/log/silex-rest-api.log",
+        "level": "WARNING"
+    },
+    "db":{            
+        "driver"   : "pdo_mysql",
+        "dbname"   : "silexrestapi_test",
+        "host"     : "localhost",
+        "user"     : "root",
+        "password" : "root"
+    }
+}
