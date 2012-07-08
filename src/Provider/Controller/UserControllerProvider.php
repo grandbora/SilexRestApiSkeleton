@@ -36,34 +36,35 @@ class UserControllerProvider implements ControllerProviderInterface {
                     }
                 })->assert('id', '\d+');
 
-
-        $controllers->put('/{id}', function (Application $app, $id) {
-
-
-                    // tobe continued
-                    //$param = $request->get('paramname');
-                    //try {
-                    //    return $app->json(true);
-                    //} catch (\Exception $e) {
-                    //    return new Response('User cannot be found', 404);
-                    //}
-
-                    $user = new \stdClass();
-                    $user->id = $id;
-                    $user->name = 'test';
-
-                    $app['monolog']->addInfo(sprintf('User id : %s updated', $id));
-                    return $app->json($user);
-                })->assert('id', '\d+');
-
         $controllers->post('/', function (Application $app) {
 
-                    $user = new \stdClass();
-                    $user->type = 'test';
-                    $user->position = 'test';
+                    try {
 
-                    $app['monolog']->addInfo('A new user is created and saved.');
-                    return $app->json($user, 201);
+                        $user = new User($app);
+                        $user->fbId = $app['request']->get('fbId');
+                        $user->type = $app['request']->get('type');
+                        $user->position = $app['request']->get('position');
+                        $user->save();
+
+                        $app['monolog']->addInfo(sprintf('A new user (id : %s) is created.', $user->id));
+                        return $app->json($user, 201);
+                    } catch (Exception $exc) {
+                        return new Response('Error in insert', 404);
+                    }
+                })->assert('id', '\d+');
+
+        $controllers->post('/{id}', function (Application $app, $id) {
+                    // this should a put request but in that case update data is not easy to access
+
+                    try {
+                        $user = new User($app, $id);
+                        $fbId = $app['request']->get('fbId');
+                        $user->update(array('fbId' => $fbId));
+                        $app['monolog']->addInfo(sprintf('User id : %s updated', $id));
+                        return $app->json($user);
+                    } catch (\Exception $e) {
+                        return new Response('User cannot be found', 404);
+                    }
                 })->assert('id', '\d+');
 
         return $controllers;

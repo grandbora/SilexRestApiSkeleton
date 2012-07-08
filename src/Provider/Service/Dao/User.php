@@ -17,8 +17,21 @@ class User {
         return $this->db->fetchAssoc($sql, array((int) $id));
     }
 
+    public function update($id, $fbId) {
+        return $this->db->update('user', array('fbId' => $fbId), array('id' => $id));
+    }
+
+    public function save(array $data) {
+
+        if (0 === $this->db->insert('user', $data))
+            return 0;
+
+        return $this->db->lastInsertId();
+    }
+
     public function delete($id) {
 
         return $this->db->delete('user', array('id' => $id));
     }
+
 }

@@ -1,5 +1,4 @@
-Just a try out on Silex to create an rest api  
-Nothing fancy :)
+Boilerplate for silex rest api
 
 --
 
@@ -10,13 +9,11 @@ TODO
 
 <del>add monolog</del>  
 <del>add models</del>  
-add persistence layer, crud ops.    
-handle exceptions  
-*add custom exs
+<del>add persistence layer, crud ops.</del>  
 
 ---
 add tests Unit/integration  
-add consumer silex app with buzz  
+<del>add consumer silex app with buzz</del>  
 
 ---  
 get it working on heroku  

@@ -32,12 +32,26 @@ class User {
         $this->position = $userData['position'];
     }
 
-    private function delete($id) {
+    public function save() {
+
+        $data = array('fbId' => $this->fbId, 'type' => $this->type, 'position' => $this->position);
+        if (0 === $id = $this->dao->save($data))
+            throw new \Exception;
+
+        return $this->id = $id;
+    }
+
+    public function delete($id) {
 
         if (0 === $this->dao->delete($id))
             throw new \Exception;
-        
+
         return true;
+    }
+
+    public function update(array $data) {
+        $this->fbId = $data['fbId'];
+        $this->dao->update($this->id, $this->fbId);
     }
 
     public function setId($id) {

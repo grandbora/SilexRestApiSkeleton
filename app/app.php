@@ -1,6 +1,6 @@
 <?php
 
-use CODEAlchemy\Wisdom\Silex\Provider;
+use CODEAlchemy\Wisdom\Silex\Provider as WisdomProvider;
 use Silex\Provider\MonologServiceProvider;
 use Provider\Controller\UtilControllerProvider;
 use Provider\Controller\UserControllerProvider;
@@ -19,7 +19,7 @@ if ("dev" === getenv("APPLICATION_ENV")) {
     ini_set('display_startup_errors', 1);
 }
 
-$app->register(new Provider, array(
+$app->register(new WisdomProvider, array(
     'wisdom.path' => $baseDir . '/config',
     'wisdom.options' => array(
         'prefix' => getenv("APPLICATION_ENV") . '.'
