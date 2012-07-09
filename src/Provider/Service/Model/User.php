@@ -88,7 +88,7 @@ class User {
     }
 
     public function setPosition($position) {
-        $this->position = (int) $position;
+        $this->position = $position;
     }
 
     public function getPosition() {

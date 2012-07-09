@@ -1,22 +1,29 @@
 <?php
 
-namespace Tests;
+namespace Test\Integration;
 
 use Silex\WebTestCase;
 
-class IntegrationTestCase extends WebTestCase {
+class TestCase extends WebTestCase {
 
     private $tables;
 
     public function createApplication() {
-        $app = require dirname(dirname(__DIR__)) . '/app/app.php';
+        $app = require dirname(dirname(dirname(__DIR__))) . '/app/app.php';
         return $app;
     }
 
     public function setUp() {
         parent::setUp();
-        
-        // @todo insert fixtures here
+
+        //run fixture scripts
+        $nameList = explode('\\', get_class($this));
+        array_splice($nameList, count($nameList) - 1, 0, 'Fixture');
+        $fixtureClass = implode('\\', $nameList);
+        if (class_exists($fixtureClass)) {
+            $fixture = new $fixtureClass();
+            $this->app['db']->executeQuery($fixture->getDbScript());
+        }
     }
 
     public function tearDown() {

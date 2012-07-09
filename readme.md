@@ -14,9 +14,11 @@ TODO
   
 ---
 * <del>add consumer silex app with buzz</del>  
-* <del>add Unit tests
-* add Integration tests
+* <del>add Unit tests</del>  
+* <del>add Integration tests</del>  
+* <del>create 2 different test suites for unit/integration</del>  
 * add functional tests
+* configure code coverage
 
 ---  
 get it working on heroku  

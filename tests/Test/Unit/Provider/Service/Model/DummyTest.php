@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Provider\Service\Model;
+namespace Tests\Unit\Provider\Service\Model;
 
 class DummyTest extends \PHPUnit_Framework_TestCase {
 
