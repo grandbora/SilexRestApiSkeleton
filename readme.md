@@ -1,4 +1,4 @@
-Boilerplate for silex rest api  
+Boilerplate for a silex rest api  
 for testing purposes [SilexApiConsumer](https://github.com/grandbora/SilexApiConsumer)  
 
 --

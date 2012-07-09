@@ -16,6 +16,11 @@ class TestCase extends WebTestCase {
     public function setUp() {
         parent::setUp();
 
+        //clean database
+        foreach ($this->getTables() as $table) {
+            $this->app['db']->executeQuery("TRUNCATE $table");
+        }
+
         //run fixture scripts
         $nameList = explode('\\', get_class($this));
         array_splice($nameList, count($nameList) - 1, 0, 'Fixture');
@@ -27,9 +32,7 @@ class TestCase extends WebTestCase {
     }
 
     public function tearDown() {
-        foreach ($this->getTables() as $table) {
-            $this->app['db']->executeQuery("TRUNCATE $table");
-        }
+        
     }
 
     private function getTables() {
