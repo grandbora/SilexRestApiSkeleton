@@ -21,4 +21,4 @@ TODO
 * configure code coverage
 
 ---  
-get it working on heroku  
+* get it working on heroku  
