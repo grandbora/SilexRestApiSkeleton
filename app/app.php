@@ -1,6 +1,6 @@
 <?php
 
-use CODEAlchemy\Wisdom\Silex\Provider as WisdomProvider;
+use KevinGH\Wisdom\Silex\Provider as WisdomProvider;
 use Silex\Provider\MonologServiceProvider;
 use Provider\Controller\UtilControllerProvider;
 use Provider\Controller\UserControllerProvider;

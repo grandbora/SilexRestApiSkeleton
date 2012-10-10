@@ -1,3 +1,7 @@
+vendor/*
+web/logs/*
 composer.phar
 composer.lock
 tests/report/*
+Vagrantfile
+.vagrant

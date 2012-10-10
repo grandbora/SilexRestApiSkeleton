@@ -54,7 +54,7 @@ class UserControllerProvider implements ControllerProviderInterface {
                 })->assert('id', '\d+');
 
         $controllers->post('/{id}', function (Application $app, $id) {
-                    // this should a put request but in that case update data is not easy to access
+                    // this should be a put request but in that case update data can not be accessed easily
 
                     try {
                         $user = new User($app, $id);

@@ -1,6 +1,6 @@
 {
     "log":{
-        "path" : "/var/log/silex-rest-api.log",
+        "path" : "logs/silex-rest-api.log",
         "level": "DEBUG"
     },
     "db":{            
